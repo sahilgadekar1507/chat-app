@@ -1,0 +1,10 @@
+# Ignore dependencies
+node_modules/
+
+# Ignore environment variables (Important for security!)
+.env
+
+# Ignore build folders and logs
+dist/
+build/
+npm-debug.log*
