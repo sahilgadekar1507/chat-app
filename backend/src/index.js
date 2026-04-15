@@ -19,7 +19,7 @@ const __dirname = path.resolve();
 app.use(
   express.json({
     limit: "5mb",
-    entended: true,
+    extended: true,
   }),
 );
 app.use(cookieParser());
@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === "production") {
   const frontendPath = path.join(__dirname, "frontend", "dist");
   app.use(express.static(frontendPath));
 
-  app.get("/:any*", (req, res) => {
+  app.get("*", (req, res) => {
     res.sendFile(path.join(frontendPath, "index.html"));
   });
 }
